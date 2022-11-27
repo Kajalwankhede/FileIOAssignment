@@ -9,6 +9,13 @@ public class EmployeePayRollData {
         this.name=name;
         this.salary=salary;
     }
+
+
+public void printData(){
+    System.out.println("Employee Id: "+id);
+    System.out.println("Employee Name: "+name);
+    System.out.println("Employee Salary: "+salary);
+}
     @Override
     public String toString(){
         return "EmployeePayRollDetails {" +
