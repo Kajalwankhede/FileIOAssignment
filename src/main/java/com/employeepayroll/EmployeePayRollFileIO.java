@@ -40,5 +40,18 @@ public class EmployeePayRollFileIO {
             e.printStackTrace();
         }
     }
+    public List<EmployeePayRollData>  readData() {
+        List<EmployeePayRollData> employeePayRollDataList = new ArrayList<EmployeePayRollData>();
+
+        try {
+            Files.lines(new File(payrollFile).toPath())
+                    .map(line->line.trim())
+                    .forEach(line-> System.out.println(line));
+
+        }catch(IOException exception) {
+            exception.printStackTrace();
+        }
+        return employeePayRollDataList;
+    }
 
 }

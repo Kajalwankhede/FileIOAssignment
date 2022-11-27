@@ -2,7 +2,11 @@ package com.employeepayroll;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 import java.util.Arrays;
+import java.util.List;
+
 import com.employeepayroll.EmployeePayRollService.IOCommand;
+
+import static org.testng.AssertJUnit.assertEquals;
 
 public class EmployeePayRollServiceTest {
     EmployeePayRollService employeePayRollService;
@@ -24,5 +28,11 @@ public class EmployeePayRollServiceTest {
     @Test
     public void givenThreeEmployeesWhenWrittenToFileShouldMatchEmployeeEntries() {
         Assert.assertEquals(3, EmployeePayRollService.countEntries(IOCommand.FILE_IO));
+    }
+
+    @Test
+    public void givenFileOnReadingFromFileShouldMatchedEmployeeCount(){
+      List<EmployeePayRollData> employeeList=EmployeePayRollService.readData();
+        assertEquals(3,employeePayRollService.countEntries(IOCommand.FILE_IO));
     }
 }

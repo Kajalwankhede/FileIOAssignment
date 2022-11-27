@@ -16,19 +16,21 @@ public class EmployeePayRollService {
     }
 
     public EmployeePayRollService() {
+       employeePayRollDataList =new ArrayList<EmployeePayRollData>();
     }
 
-  public EmployeePayRollService(List<EmployeePayRollData> employeePayRollDataList) {
-        this.employeePayRollDataList = employeePayRollDataList;
- }
+
     public static void main(String[] args) {
         ArrayList<EmployeePayRollData> employeePayRollDataList = new ArrayList<>();
-        EmployeePayRollService employeePayRollService = new EmployeePayRollService(employeePayRollDataList);
+        EmployeePayRollService employeePayRollService = new EmployeePayRollService();
         Scanner consoleInputReader = new Scanner(System.in);
         //employeePayRollService.readEmployeePayRollData(consoleInputReader);// Reading empPayRoll Data;
         employeePayRollService.writeEmployeePayrollData(IOCommand.CONSOLE_IO);
         employeePayRollService.writeEmployeePayrollData(IOCommand.FILE_IO);
         employeePayRollService.printData();
+        for (EmployeePayRollData employeePayRollData :employeePayRollService.readData()){
+            employeePayRollData.printData();
+        }
 
     }
     private void readEmployeePayRollData(Scanner consoleInputReader) {//Passing scanner from console
@@ -64,5 +66,9 @@ public class EmployeePayRollService {
     public void printData(){ //printing data
         new EmployeePayRollFileIO().printData();
     }
+    public static List<EmployeePayRollData>readData(){
+        return  new EmployeePayRollFileIO().readData();
+    }
 }
+
 
