@@ -1,3 +1,3 @@
-EmployeePayRollDetails {ID: 1,Name: Jeff Bezos,Salary: 100000.0}
-EmployeePayRollDetails {ID: 2,Name: Bill Gates,Salary: 200000.0}
-EmployeePayRollDetails {ID: 3,Name: Mark Zuckerberg,Salary: 300000.0}
+EmployeePayRollDetails {ID: 1,Name: Jenny Bezos,Salary: 100000.0}
+EmployeePayRollDetails {ID: 2,Name: Sunny Gates,Salary: 200000.0}
+EmployeePayRollDetails {ID: 3,Name: Honey Zuckerberg,Salary: 300000.0}
