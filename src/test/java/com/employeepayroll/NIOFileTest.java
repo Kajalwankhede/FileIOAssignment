@@ -55,6 +55,11 @@ public class NIOFileTest {
         }
         return contentsToDelete.delete();
     }
-
-
+    @Test
+    public void givenADirWhenWatchedListsAllTheActivities() throws IOException {
+        Path dir = Paths.get(pathDirectory+"/"+folderName);
+        Files.list(dir).filter(Files::isRegularFile).forEach(System.out::println);
+        assertTrue(new JavaWatchService(dir).processEvents());
+    }
 }
+
